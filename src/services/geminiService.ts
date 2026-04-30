@@ -85,7 +85,7 @@ const responseSchema = {
   required: ['events']
 };
 
-const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_API_KEY });
 
 export async function analyzeSchedule(schedule: string, files?: { data: string; mimeType: string }[]): Promise<WorkflowOutput> {
   const currentTime = new Date().toLocaleString();
